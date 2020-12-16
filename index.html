@@ -81,7 +81,49 @@ axion-project
 
 .show {display: block;}
 </style>
-  
+
+/* Container holding the image and the text */
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+/* Bottom left text */
+.bottom-left {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+/* Top left text */
+.top-left {
+  position: absolute;
+  top: 8px;
+  left: 16px;
+}
+
+/* Top right text */
+.top-right {
+  position: absolute;
+  top: 8px;
+  right: 16px;
+}
+
+/* Bottom right text */
+.bottom-right {
+  position: absolute;
+  bottom: 8px;
+  right: 16px;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
   
 <style>
   img {
@@ -145,8 +187,13 @@ function filterFunction() {
 </p>
   
 <div align="center">
-<img src="https://axion-project.github.io/banner.jpg" alt="banner">
+<img src="https://axion-project.gihub.io/banner.jpg" alt="banner">
 </div>  
+
+<div class="container" align="center">
+  <img src="banner.jpg" alt="Banner">
+  <div class="centered"><font face="ARIAL" size="4" color="#000000">LIFE! IT IS JUST WHAT YOUR BRAND NEEDS.</div>
+</div>
 
 <p>
 </p>
