@@ -100,46 +100,16 @@
         </div>
 
         <div class="social-links">
+            <!-- LinkedIn Icon -->
             <a href="https://www.linkedin.com/in/michaelwmorales" target="_blank" rel="noopener noreferrer">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
                 </svg>
             </a>
-        </div>
-    </div>
-    
-    <footer>
-        &copy; 2025 Michael Morales. All Rights Reserved.
-    </footer>
-    
-    <script>
-        const roles = [
-            "Principal AI Consultant",
-            "Principal Systems Architect",
-            "AI Visionary",
-            "Ethical Innovator",
-            "Entrepreneur",
-            "DevSecOps Maverick",
-            "WordPress Alchemist",
-            "Python Virtuoso",
-            "Data Dynamo",
-            "Pragmatic Programmer",
-            "HTMP Creator"
-        ];
-        
-        const rolesContainer = document.getElementById('roles');
-        
-        roles.forEach(role => {
-            const roleElement = document.createElement('div');
-            roleElement.className = 'role';
-            roleElement.textContent = role;
-            roleElement.setAttribute('hx-get', `/api/role-details?role=${encodeURIComponent(role)}`);
-            roleElement.setAttribute('hx-target', '#role-details');
-            roleElement.setAttribute('hx-trigger', 'click');
-            rolesContainer.appendChild(roleElement);
-        });
-    </script>
-    
-    <div id="role-details"></div>
-</body>
-</html>
+
+            <!-- Portfolio Icon -->
+            <a href="https://aedininsight.info" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
+                    <path d="M180-120q-24 0-42-18t-18-42v-600q0-24 18-42t42-18h180v60H180v600h600v-600H600v60h180q24 0 42 18t18 42v600q0 24-18 42t-42 
+                    </svg>
+                </svg>
