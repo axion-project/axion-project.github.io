@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Morales - GitHub</title>
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Google Sans', sans-serif;
+            font-size: 14px;
+            background-color: #0d1117;
+            color: #c9d1d9;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            flex-grow: 1;
+        }
+        
+        h1 {
+            font-size: 36px;
+            color: #58a6ff;
+            margin-bottom: 20px;
+        }
+        
+        .roles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+        
+        .role {
+            background-color: #21262d;
+            color: #58a6ff;
+            padding: 5px 10px;
+            border-radius: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .role:hover {
+            background-color: #30363d;
+        }
+        
+        footer {
+            background-color: #161b22;
+            color: #8b949e;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Michael Morales</h1>
+        <div class="roles" id="roles">
+            <!-- Roles will be dynamically added here -->
+        </div>
+    </div>
+    
+    <footer>
+        &copy; 2025 Michael Morales. All Rights Reserved.
+    </footer>
+    
+    <script>
+        const roles = [
+            "Principal AI Consultant",
+            "Principal Systems Architect",
+            "AI Visionary",
+            "Ethical Innovator",
+            "Entrepreneur",
+            "DevSecOps Maverick",
+            "WordPress Alchemist",
+            "Python Virtuoso",
+            "Data Dynamo",
+            "Pragmatic Programmer",
+            "HTMP Creator"
+        ];
+        
+        const rolesContainer = document.getElementById('roles');
+        
+        roles.forEach(role => {
+            const roleElement = document.createElement('div');
+            roleElement.className = 'role';
+            roleElement.textContent = role;
+            roleElement.setAttribute('hx-get', `/api/role-details?role=${encodeURIComponent(role)}`);
+            roleElement.setAttribute('hx-target', '#role-details');
+            roleElement.setAttribute('hx-trigger', 'click');
+            rolesContainer.appendChild(roleElement);
+        });
+    </script>
+  
+    <div id="role-details"></div>
+</body>
+</html>
