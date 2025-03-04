@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Michael Morales - GitHub</title>
     <script src="https://unpkg.com/htmx.org@1.9.2"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Google+Sans:wght@400;700&display=swap');
         
@@ -54,28 +53,12 @@
             background-color: #30363d;
         }
         
-        .bio {
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-        
         footer {
             background-color: #161b22;
             color: #8b949e;
             text-align: center;
             padding: 10px;
             margin-top: auto;
-        }
-
-        .social-links {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .social-links a {
-            color: #58a6ff;
-            text-decoration: none;
-            margin: 0 10px;
         }
     </style>
 </head>
@@ -85,14 +68,40 @@
         <div class="roles" id="roles">
             <!-- Roles will be dynamically added here -->
         </div>
+    </div>
+    
+    <footer>
+        &copy; 2025 Michael Morales. All Rights Reserved.
+    </footer>
+    
+    <script>
+        const roles = [
+            "Principal AI Consultant",
+            "Principal Systems Architect",
+            "AI Visionary",
+            "Ethical Innovator",
+            "Entrepreneur",
+            "DevSecOps Maverick",
+            "WordPress Alchemist",
+            "Python Virtuoso",
+            "Data Dynamo",
+            "Pragmatic Programmer",
+            "HTMP Creator"
+        ];
         
-        <div class="bio">
-            <p>I'm the creator of HTMP, a Principal Systems Architect, Principal AI Consultant, and WordPress Subject Matter Expert. With over 20 years in the game, I specialize in building AI-driven systems, designing high-performance architectures, and crafting bespoke WordPress experiences that help businesses innovate, scale, and dominate their markets.</p>
-            
-            <p>I combine my expertise in AI, systems architecture, and software engineering to deliver cutting-edge solutions tailored to your business needs. From workflow automation to digital strategy, I create high-impact systems that don't just meet expectations. That blow them out of the water!</p>
-            
-            <p>I don't follow trends. I create them. If you're ready to break the mold, streamline operations, and drive results, I'm your go-to strategist and architect.</p>
-        </div>
-
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/michael
+        const rolesContainer = document.getElementById('roles');
+        
+        roles.forEach(role => {
+            const roleElement = document.createElement('div');
+            roleElement.className = 'role';
+            roleElement.textContent = role;
+            roleElement.setAttribute('hx-get', `/api/role-details?role=${encodeURIComponent(role)}`);
+            roleElement.setAttribute('hx-target', '#role-details');
+            roleElement.setAttribute('hx-trigger', 'click');
+            rolesContainer.appendChild(roleElement);
+        });
+    </script>
+    
+    <div id="role-details"></div>
+</body>
+</html>
