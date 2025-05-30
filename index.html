@@ -1,179 +1,171 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Michael Morales — GitHub Terminal</title>
-
-  <!-- Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PY5DMDNTM6"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-PY5DMDNTM6');
-  </script>
-
-  <!-- HTMX -->
-  <script src="https://unpkg.com/htmx.org@1.9.2"></script>
-
-  <!-- MesloLGS Nerd Font -->
-  <style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Michael Morales | Principal Systems Architect</title>
+    <meta name="description" content="Michael Morales is a Principal Systems Architect and Digital Strategy Expert. Creator of HTMP and master of AI-driven innovation, WordPress, and systems design.">
+    <meta name="keywords" content="Michael Morales, Principal Systems Architect, AI Consultant, HTMP, WordPress Expert, Systems Engineering, Digital Strategy">
+    <meta name="author" content="Michael Morales">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PY5DMDNTM6"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-PY5DMDNTM6');
+    </script>
+    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+    <style>
     @font-face {
-      font-family: 'MesloLGS NF';
-      src: local('MesloLGS NF'), local('MesloLGS Nerd Font'),
-           url('https://cdn.jsdelivr.net/gh/ryanoasis/nerd-fonts@master/patched-fonts/Meslo/L/Regular/MesloLGS%20NF%20Regular.ttf') format('truetype');
-      font-style: normal;
-      font-weight: normal;
+        font-family: 'MesloLGS NF';
+        src: url('https://cdn.jsdelivr.net/gh/ryanoasis/nerd-fonts@3.0.2/patched-fonts/Meslo/L/Regular/MesloLGS%20NF-Regular.ttf') format('truetype');
+        font-weight: normal;
+        font-style: normal;
     }
 
     body {
-      font-family: 'MesloLGS NF', monospace;
-      font-size: 14px;
-      background-color: #0d1117;
-      color: #c9d1d9;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: 'MesloLGS NF', monospace;
+        background-color: #0d1117;
+        color: #c9d1d9;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
     }
 
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-      flex-grow: 1;
-    }
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px;
+        }
 
-    h1 {
-      font-size: 32px;
-      color: #50fa7b;
-      margin-bottom: 20px;
-    }
+        h1 {
+            font-size: 28px;
+            color: #ff79c6;
+            margin-bottom: 10px;
+        }
 
-    .roles {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-bottom: 30px;
-    }
+        .terminal-line {
+            background-color: #161b22;
+            padding: 12px;
+            margin-bottom: 10px;
+            border-left: 5px solid #50fa7b;
+            white-space: pre-wrap;
+        }
 
-    .role {
-      background-color: #21262d;
-      color: #8be9fd;
-      padding: 5px 10px;
-      border-radius: 15px;
-      cursor: pointer;
-      transition: background-color 0.3s;
-    }
+        .roles {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0;
+        }
 
-    .role:hover {
-      background-color: #30363d;
-    }
+        .role {
+            background-color: #21262d;
+            color: #8be9fd;
+            padding: 5px 12px;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 13px;
+        }
 
-    .bio {
-      line-height: 1.6;
-      margin-bottom: 30px;
-    }
+        .role:hover {
+            background-color: #444c56;
+        }
 
-    footer {
-      background-color: #161b22;
-      color: #8b949e;
-      text-align: center;
-      padding: 10px;
-      margin-top: auto;
-    }
+        .social-links {
+            text-align: center;
+            margin: 20px 0;
+        }
 
-    .social-links {
-      text-align: center;
-      margin-bottom: 20px;
-    }
+        .social-links a {
+            color: #bd93f9;
+            text-decoration: none;
+            margin: 0 10px;
+        }
 
-    .social-links a {
-      color: #ff79c6;
-      text-decoration: none;
-      margin: 0 10px;
-    }
+        .social-links svg {
+            width: 28px;
+            height: 28px;
+            fill: #bd93f9;
+        }
 
-    .social-links svg {
-      width: 32px;
-      height: 32px;
-      fill: #ff79c6;
-    }
+        footer {
+            background-color: #0d1117;
+            text-align: center;
+            color: #6272a4;
+            font-size: 12px;
+            padding: 10px;
+            margin-top: auto;
+        }
 
-    #role-details {
-      border-top: 1px dashed #44475a;
-      margin-top: 20px;
-      padding-top: 10px;
-      color: #f8f8f2;
-    }
-  </style>
+        #role-details {
+            margin-top: 20px;
+            color: #f1fa8c;
+            font-size: 14px;
+        }
+    </style>
 </head>
 <body>
-  <div class="container">
-    <h1>&gt; Michael Morales</h1>
+    <div class="container">
+        <div class="terminal-line">$ whoami</div>
+        <h1>Michael Morales</h1>
 
-    <div class="roles" id="roles">
-      <!-- Roles will be dynamically added here -->
+        <div class="terminal-line">$ roles --list</div>
+        <div class="roles" id="roles"></div>
+
+        <div class="terminal-line">$ cat about.txt</div>
+        <div class="bio">
+            <p>Architect of innovation. Strategist of the digital age. I’m the mind behind HTMP and the engineer behind scalable AI systems and high-performance WordPress architectures.</p>
+            <p>From DevSecOps to ethical AI, I don't just write code—I write the playbook. Expect bleeding-edge strategy fused with over two decades of rock-solid engineering insight.</p>
+            <p>If you're done with the status quo and ready to play offense in the digital arena—I'm your guy.</p>
+        </div>
+
+        <div class="terminal-line">$ open linkedin</div>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/michaelwmorales" target="_blank" rel="noopener noreferrer">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+            </a>
+        </div>
+
+        <div class="terminal-line">$ show roles --details</div>
+        <div id="role-details"></div>
     </div>
 
-    <div class="bio">
-      <p>// I’m the creator of <strong>HTMP</strong>, a Principal Systems Architect, Principal AI Consultant, and WordPress Subject Matter Expert.</p>
-      <p>// With 20+ years in the trenches, I build AI-driven systems, design high-performance architectures, and craft WordPress experiences that help businesses dominate their markets.</p>
-      <p>// I don’t follow trends. I launch them. Want strategy that disrupts? Let’s architect it.</p>
-    </div>
+    <footer>
+        &copy; 2025 Michael Morales. Terminal-coded. Human-approved.
+    </footer>
 
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/michaelwmorales" target="_blank" rel="noopener noreferrer">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 
-          2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 
-          19h-3v-11h3v11zm-1.5-12.268c-.966 
-          0-1.75-.79-1.75-1.764s.784-1.764 
-          1.75-1.764 1.75.79 1.75 
-          1.764-.783 1.764-1.75 
-          1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 
-          0v5.604h-3v-11h3v1.765c1.396-2.586 
-          7-2.777 7 2.476v6.759z"/>
-        </svg>
-      </a>
-    </div>
+    <script>
+        const roles = [
+            "Prompt Engineer",
+            "Principal AI Consultant",
+            "Principal Systems Architect",
+            "AI Visionary",
+            "Ethical Innovator",
+            "Entrepreneur",
+            "DevSecOps Maverick",
+            "WordPress Alchemist",
+            "Python Virtuoso",
+            "Data Dynamo",
+            "Pragmatic Programmer",
+            "HTMP Creator"
+        ];
 
-    <div id="role-details"></div>
-  </div>
+        const rolesContainer = document.getElementById('roles');
 
-  <footer>
-    &copy; 2025 Michael Morales. All Rights Reserved.
-  </footer>
-
-  <script>
-    const roles = [
-      "Prompt Engineer",
-      "Principal AI Consultant",
-      "Principal Systems Architect",
-      "AI Visionary",
-      "Ethical Innovator",
-      "Entrepreneur",
-      "DevSecOps Maverick",
-      "WordPress Alchemist",
-      "Python Virtuoso",
-      "Data Dynamo",
-      "Pragmatic Programmer",
-      "HTMP Creator"
-    ];
-
-    const rolesContainer = document.getElementById('roles');
-
-    roles.forEach(role => {
-      const roleElement = document.createElement('div');
-      roleElement.className = 'role';
-      roleElement.textContent = role;
-      roleElement.setAttribute('hx-get', `/api/role-details?role=${encodeURIComponent(role)}`);
-      roleElement.setAttribute('hx-target', '#role-details');
-      roleElement.setAttribute('hx-trigger', 'click');
-      rolesContainer.appendChild(roleElement);
-    });
-  </script>
+        roles.forEach(role => {
+            const roleElement = document.createElement('div');
+            roleElement.className = 'role';
+            roleElement.textContent = role;
+            roleElement.setAttribute('hx-get', `/api/role-details?role=${encodeURIComponent(role)}`);
+            roleElement.setAttribute('hx-target', '#role-details');
+            roleElement.setAttribute('hx-trigger', 'click');
+            rolesContainer.appendChild(roleElement);
+        });
+    </script>
 </body>
 </html>
