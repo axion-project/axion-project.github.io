@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Michael Morales — Terminal</title>
+  <title>Michael Morales — GitHub Terminal</title>
 
   <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PY5DMDNTM6"></script>
@@ -14,67 +14,166 @@
     gtag('config', 'G-PY5DMDNTM6');
   </script>
 
-  <!-- MesloLGS Nerd Font (assumes local install or fallback to monospace) -->
+  <!-- HTMX -->
+  <script src="https://unpkg.com/htmx.org@1.9.2"></script>
+
+  <!-- MesloLGS Nerd Font -->
   <style>
     @font-face {
       font-family: 'MesloLGS NF';
       src: local('MesloLGS NF'), local('MesloLGS Nerd Font'),
            url('https://cdn.jsdelivr.net/gh/ryanoasis/nerd-fonts@master/patched-fonts/Meslo/L/Regular/MesloLGS%20NF%20Regular.ttf') format('truetype');
-      font-weight: normal;
       font-style: normal;
+      font-weight: normal;
     }
 
     body {
-      margin: 0;
-      padding: 2rem;
+      font-family: 'MesloLGS NF', monospace;
+      font-size: 14px;
       background-color: #0d1117;
       color: #c9d1d9;
-      font-family: 'MesloLGS NF', monospace;
-      font-size: 1rem;
-      line-height: 1.5;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
-    .terminal {
+    .container {
       max-width: 800px;
       margin: 0 auto;
-      padding: 1rem;
-      background-color: #161b22;
-      border: 1px solid #30363d;
-      border-radius: 12px;
+      padding: 20px;
+      flex-grow: 1;
     }
 
-    .prompt {
+    h1 {
+      font-size: 32px;
       color: #50fa7b;
+      margin-bottom: 20px;
     }
 
-    a {
+    .roles {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .role {
+      background-color: #21262d;
       color: #8be9fd;
+      padding: 5px 10px;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .role:hover {
+      background-color: #30363d;
+    }
+
+    .bio {
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    footer {
+      background-color: #161b22;
+      color: #8b949e;
+      text-align: center;
+      padding: 10px;
+      margin-top: auto;
+    }
+
+    .social-links {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .social-links a {
+      color: #ff79c6;
       text-decoration: none;
+      margin: 0 10px;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .social-links svg {
+      width: 32px;
+      height: 32px;
+      fill: #ff79c6;
     }
 
-    .comment {
-      color: #6272a4;
-    }
-
-    .highlight {
-      color: #f1fa8c;
+    #role-details {
+      border-top: 1px dashed #44475a;
+      margin-top: 20px;
+      padding-top: 10px;
+      color: #f8f8f2;
     }
   </style>
 </head>
 <body>
-  <div class="terminal">
-    <p><span class="prompt">$</span> whoami</p>
-    <p>Michael Morales — <span class="highlight">Principal Systems Architect & AI Strategist</span></p>
+  <div class="container">
+    <h1>&gt; Michael Morales</h1>
 
-    <p><span class="prompt">$</span> cat mission.txt</p>
-    <p>I build bleeding-edge systems with architectural precision, high performance, and sharp strategy. Creator of <a href="https://htmp.dev" target="_blank">HTMP</a>, master of WordPress internals, and a relentless problem-solver in AI and digital transformation.</p>
+    <div class="roles" id="roles">
+      <!-- Roles will be dynamically added here -->
+    </div>
 
-    <p><span class="prompt">$</span> ls -l /connect</p>
-    <p><span class="comment">linkedin</span> - <a href="https://www.linkedin.com/in/michaelwmorales" target="_blank">linkedin.com/in/michaelwmorales</a></p>
+    <div class="bio">
+      <p>// I’m the creator of <strong>HTMP</strong>, a Principal Systems Architect, Principal AI Consultant, and WordPress Subject Matter Expert.</p>
+      <p>// With 20+ years in the trenches, I build AI-driven systems, design high-performance architectures, and craft WordPress experiences that help businesses dominate their markets.</p>
+      <p>// I don’t follow trends. I launch them. Want strategy that disrupts? Let’s architect it.</p>
+    </div>
+
+    <div class="social-links">
+      <a href="https://www.linkedin.com/in/michaelwmorales" target="_blank" rel="noopener noreferrer">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 
+          2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 
+          19h-3v-11h3v11zm-1.5-12.268c-.966 
+          0-1.75-.79-1.75-1.764s.784-1.764 
+          1.75-1.764 1.75.79 1.75 
+          1.764-.783 1.764-1.75 
+          1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 
+          0v5.604h-3v-11h3v1.765c1.396-2.586 
+          7-2.777 7 2.476v6.759z"/>
+        </svg>
+      </a>
+    </div>
+
+    <div id="role-details"></div>
   </div>
+
+  <footer>
+    &copy; 2025 Michael Morales. All Rights Reserved.
+  </footer>
+
+  <script>
+    const roles = [
+      "Prompt Engineer",
+      "Principal AI Consultant",
+      "Principal Systems Architect",
+      "AI Visionary",
+      "Ethical Innovator",
+      "Entrepreneur",
+      "DevSecOps Maverick",
+      "WordPress Alchemist",
+      "Python Virtuoso",
+      "Data Dynamo",
+      "Pragmatic Programmer",
+      "HTMP Creator"
+    ];
+
+    const rolesContainer = document.getElementById('roles');
+
+    roles.forEach(role => {
+      const roleElement = document.createElement('div');
+      roleElement.className = 'role';
+      roleElement.textContent = role;
+      roleElement.setAttribute('hx-get', `/api/role-details?role=${encodeURIComponent(role)}`);
+      roleElement.setAttribute('hx-target', '#role-details');
+      roleElement.setAttribute('hx-trigger', 'click');
+      rolesContainer.appendChild(roleElement);
+    });
+  </script>
 </body>
 </html>
