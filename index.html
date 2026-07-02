@@ -1,171 +1,794 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Michael Morales | Principal Systems Architect</title>
-    <meta name="description" content="Michael Morales is a Principal Systems Architect and Digital Strategy Expert. Creator of HTMP and master of AI-driven innovation, WordPress, and systems design.">
-    <meta name="keywords" content="Michael Morales, Principal Systems Architect, AI Consultant, HTMP, WordPress Expert, Systems Engineering, Digital Strategy">
-    <meta name="author" content="Michael Morales">
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PY5DMDNTM6"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-PY5DMDNTM6');
-    </script>
-    <script src="https://unpkg.com/htmx.org@1.9.2"></script>
-    <style>
-    @font-face {
-        font-family: 'MesloLGS NF';
-        src: url('https://cdn.jsdelivr.net/gh/ryanoasis/nerd-fonts@3.0.2/patched-fonts/Meslo/L/Regular/MesloLGS%20NF-Regular.ttf') format('truetype');
-        font-weight: normal;
-        font-style: normal;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aedin Insight, LLC · Fractional CTO</title>
+<meta name="description" content="Aedin Insight embeds senior technical leadership into growing companies. Architecture, hiring, and roadmap decisions handled by someone who's shipped before.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* ===== Tokens ===== */
+:root {
+  --bg: #0B0F14;
+  --bg-panel: #121822;
+  --bg-panel-alt: #0F141C;
+  --border: #212B38;
+  --text: #E8EDF2;
+  --text-muted: #8A97A8;
+  --text-dim: #5C6779;
+  --accent: #2FE6C6;
+  --accent-soft: rgba(47, 230, 198, 0.12);
+  --accent-amber: #FFB454;
+  --max-width: 1120px;
 
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: 'MesloLGS NF', monospace;
-        background-color: #0d1117;
-        color: #c9d1d9;
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-    }
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
 
-        .container {
-            max-width: 900px;
-            margin: auto;
-            padding: 20px;
-        }
+/* ===== Reset ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-        h1 {
-            font-size: 28px;
-            color: #ff79c6;
-            margin-bottom: 10px;
-        }
+html { scroll-behavior: smooth; }
 
-        .terminal-line {
-            background-color: #161b22;
-            padding: 12px;
-            margin-bottom: 10px;
-            border-left: 5px solid #50fa7b;
-            white-space: pre-wrap;
-        }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
 
-        .roles {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 20px 0;
-        }
+a { color: inherit; text-decoration: none; }
+ul, ol { list-style: none; }
+img { max-width: 100%; display: block; }
 
-        .role {
-            background-color: #21262d;
-            color: #8be9fd;
-            padding: 5px 12px;
-            border-radius: 3px;
-            cursor: pointer;
-            font-size: 13px;
-        }
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
 
-        .role:hover {
-            background-color: #444c56;
-        }
+.mono { font-family: var(--font-mono); }
 
-        .social-links {
-            text-align: center;
-            margin: 20px 0;
-        }
+/* ===== Ambient grid background ===== */
+.grid-bg {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background-image:
+    linear-gradient(rgba(47, 230, 198, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(47, 230, 198, 0.05) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 0%, black 20%, transparent 75%);
+}
 
-        .social-links a {
-            color: #bd93f9;
-            text-decoration: none;
-            margin: 0 10px;
-        }
+/* ===== Buttons ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
 
-        .social-links svg {
-            width: 28px;
-            height: 28px;
-            fill: #bd93f9;
-        }
+.btn-primary {
+  background: var(--accent);
+  color: #06110E;
+  box-shadow: 0 0 0 0 rgba(47, 230, 198, 0);
+}
 
-        footer {
-            background-color: #0d1117;
-            text-align: center;
-            color: #6272a4;
-            font-size: 12px;
-            padding: 10px;
-            margin-top: auto;
-        }
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px -8px rgba(47, 230, 198, 0.55);
+}
 
-        #role-details {
-            margin-top: 20px;
-            color: #f1fa8c;
-            font-size: 14px;
-        }
-    </style>
+.btn-lg {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--text-muted);
+  border-color: var(--border);
+}
+
+.btn-ghost:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.arrow { display: inline-block; transition: transform 0.2s ease; }
+.btn-ghost:hover .arrow { transform: translateY(3px); }
+
+/* ===== Nav ===== */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(11, 15, 20, 0.8);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.logo-mark {
+  font-family: var(--font-mono);
+  color: var(--accent);
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  font-size: 0.92rem;
+  color: var(--text-muted);
+}
+
+.nav-links a:hover { color: var(--text); }
+
+.nav-cta { display: none; }
+
+@media (min-width: 720px) {
+  .nav-cta { display: inline-flex; }
+}
+
+/* ===== Layout helpers ===== */
+.section-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.section {
+  padding: 6rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.85rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.5vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  max-width: 32ch;
+}
+
+.section-sub {
+  color: var(--text-muted);
+  max-width: 56ch;
+  margin-top: 1rem;
+  font-size: 1.05rem;
+}
+
+/* ===== Hero ===== */
+.hero {
+  padding: 7rem 0 5rem;
+}
+
+.hero-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  border: 1px solid var(--border);
+  background: var(--bg-panel);
+  padding: 0.45rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+  box-shadow: 0 0 0 0 rgba(47, 230, 198, 0.6);
+  animation: pulse 2.4s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(47, 230, 198, 0.55); }
+  70% { box-shadow: 0 0 0 8px rgba(47, 230, 198, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(47, 230, 198, 0); }
+}
+
+.hero-headline {
+  font-family: var(--font-display);
+  font-size: clamp(2.6rem, 7vw, 4.6rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  max-width: 16ch;
+}
+
+.accent-text { color: var(--accent); }
+
+.hero-sub {
+  margin-top: 1.75rem;
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  max-width: 52ch;
+}
+
+.hero-actions {
+  margin-top: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem;
+}
+
+.hero-meta {
+  margin-top: 3.5rem;
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.85rem;
+  color: var(--text-dim);
+}
+
+.meta-value { color: var(--text-muted); }
+
+/* ===== Stat strip ===== */
+.stat-strip {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg-panel-alt);
+}
+
+.stat-strip-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.stat-num {
+  font-size: 2rem;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.stat-label {
+  color: var(--text-muted);
+  font-size: 0.92rem;
+  max-width: 26ch;
+}
+
+/* ===== Cards ===== */
+.card-grid {
+  margin-top: 3rem;
+  display: grid;
+  gap: 1.25rem;
+}
+
+.audience-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+.services-grid { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+
+.card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1.75rem;
+  transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  border-color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.card h3 {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+}
+
+.card p {
+  color: var(--text-muted);
+  font-size: 0.96rem;
+}
+
+.service-tag {
+  display: inline-block;
+  color: var(--accent-amber);
+  font-size: 0.75rem;
+  border: 1px solid rgba(255, 180, 84, 0.3);
+  padding: 0.2rem 0.55rem;
+  border-radius: 4px;
+  margin-bottom: 0.9rem;
+}
+
+/* ===== Engagement log ===== */
+.log {
+  margin-top: 3rem;
+  border-left: 1px solid var(--border);
+}
+
+.log-entry {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem 0 1.5rem 1.75rem;
+  position: relative;
+}
+
+.log-entry::before {
+  content: '';
+  position: absolute;
+  left: -5px;
+  top: 2rem;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+}
+
+.log-tag {
+  color: var(--accent);
+  font-size: 0.85rem;
+  flex-shrink: 0;
+  width: 3.5rem;
+  padding-top: 0.15rem;
+}
+
+.log-body h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.log-body p {
+  color: var(--text-muted);
+  font-size: 0.96rem;
+  max-width: 56ch;
+}
+
+/* ===== About ===== */
+.about-inner {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+.about-text p {
+  color: var(--text-muted);
+  margin-top: 1.25rem;
+  max-width: 50ch;
+}
+
+.about-note {
+  color: var(--accent-amber);
+  font-size: 0.82rem;
+  border-left: 2px solid rgba(255, 180, 84, 0.4);
+  padding-left: 0.75rem;
+  margin: 1.25rem 0 1.75rem;
+}
+
+.about-text .btn { margin-top: 0.5rem; }
+
+.about-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.about-card-header {
+  padding: 0.75rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  color: var(--text-dim);
+  font-size: 0.8rem;
+  background: var(--bg-panel-alt);
+}
+
+.about-card-body {
+  padding: 1.5rem 1.25rem;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.about-card-body p { margin-bottom: 0.9rem; display: flex; gap: 0.6rem; }
+.about-card-body p:last-child { margin-bottom: 0; }
+
+.ok { color: var(--accent); }
+.pending { color: var(--accent-amber); }
+
+@media (max-width: 800px) {
+  .about-inner { grid-template-columns: 1fr; }
+}
+
+/* ===== Final CTA ===== */
+.final-cta {
+  border-bottom: none;
+  background: radial-gradient(ellipse 60% 100% at 50% 0%, var(--accent-soft), transparent 70%);
+}
+
+.final-cta-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.cta-headline {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.75rem);
+  font-weight: 600;
+  max-width: 20ch;
+}
+
+.cta-sub {
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+}
+
+/* ===== Footer ===== */
+.footer {
+  padding: 3rem 0;
+}
+
+.footer-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+}
+
+.footer-meta, .footer-copy {
+  color: var(--text-dim);
+  font-size: 0.85rem;
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .status-dot { animation: none; }
+  .card, .btn, .arrow { transition: none; }
+}
+
+/* ===== Scroll reveal ===== */
+.reveal {
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
 </head>
 <body>
-    <div class="container">
-        <div class="terminal-line">$ whoami</div>
-        <h1>Michael Morales</h1>
 
-        <div class="terminal-line">$ roles --list</div>
-        <div class="roles" id="roles"></div>
+<div class="grid-bg" aria-hidden="true"></div>
 
-        <div class="terminal-line">$ cat about.txt</div>
-        <div class="bio">
-            <p>Architect of innovation. Strategist of the digital age. I’m the mind behind HTMP and the engineer behind scalable AI systems and high-performance WordPress architectures.</p>
-            <p>From DevSecOps to ethical AI, I don't just write code—I write the playbook. Expect bleeding-edge strategy fused with over two decades of rock-solid engineering insight.</p>
-            <p>If you're done with the status quo and ready to play offense in the digital arena—I'm your guy.</p>
-        </div>
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#top" class="logo">
+      <span class="logo-mark">&gt;_</span>
+      <span class="logo-text">Aedin Insight</span>
+    </a>
+    <nav class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#approach">Approach</a>
+      <a href="#about">About</a>
+    </nav>
+    <a class="btn btn-primary nav-cta" href="https://calendly.com/aedificationis/meeting-with-michael-morales" target="_blank" rel="noopener">Book a call</a>
+  </div>
+</header>
 
-        <div class="terminal-line">$ open linkedin</div>
-        <div class="social-links">
-            <a href="https://www.linkedin.com/in/michaelwmorales" target="_blank" rel="noopener noreferrer">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                </svg>
-            </a>
-        </div>
+<main id="top">
 
-        <div class="terminal-line">$ show roles --details</div>
-        <div id="role-details"></div>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="status-pill">
+        <span class="status-dot" aria-hidden="true"></span>
+        Available for new engagements, Q3 2026
+      </div>
+
+      <h1 class="hero-headline">
+        Ship faster.<br>
+        Hire slower.<br>
+        <span class="accent-text">Sleep better.</span>
+      </h1>
+
+      <p class="hero-sub">
+        Aedin Insight embeds senior technical leadership into growing companies:
+        part time cost, full time judgment. Architecture, hiring, and roadmap
+        decisions handled by someone who's shipped before.
+      </p>
+
+      <div class="hero-actions">
+        <a class="btn btn-primary btn-lg" href="https://calendly.com/aedificationis/meeting-with-michael-morales" target="_blank" rel="noopener">
+          Book a call
+        </a>
+        <a class="btn btn-ghost" href="#approach">
+          See how engagements work <span class="arrow">↓</span>
+        </a>
+      </div>
+
+      <div class="hero-meta">
+        <span class="mono">$ whoami</span>
+        <span class="mono meta-value">fractional_cto @ aedin_insight</span>
+      </div>
     </div>
+  </section>
 
-    <footer>
-        &copy; 2026 Michael Morales. Terminal-coded. Human-approved.
-    </footer>
+  <!-- STAT STRIP -->
+  <section class="stat-strip" aria-label="Quick facts">
+    <div class="stat-strip-inner">
+      <div class="stat"><span class="stat-num mono">1</span><span class="stat-label">senior CTO. No junior hand-offs.</span></div>
+      <div class="stat"><span class="stat-num mono">0</span><span class="stat-label">equity required to start the conversation.</span></div>
+      <div class="stat"><span class="stat-num mono">100%</span><span class="stat-label">remote-friendly, Albuquerque-based.</span></div>
+    </div>
+  </section>
 
-    <script>
-        const roles = [
-            "Prompt Engineer",
-            "Principal AI Consultant",
-            "Principal Systems Architect",
-            "AI Visionary",
-            "Ethical Innovator",
-            "Entrepreneur",
-            "DevSecOps Maverick",
-            "WordPress Alchemist",
-            "Python Virtuoso",
-            "Data Dynamo",
-            "Pragmatic Programmer",
-            "HTMP Creator"
-        ];
+  <!-- WHO THIS IS FOR -->
+  <section class="section audience" id="who">
+    <div class="section-inner">
+      <p class="eyebrow mono">// who this is for</p>
+      <h2 class="section-title">Three ways a fractional CTO earns their keep</h2>
 
-        const rolesContainer = document.getElementById('roles');
+      <div class="card-grid audience-grid">
+        <div class="card">
+          <h3>Founders</h3>
+          <p>You've got product-market fit and a growing backlog of technical
+          decisions nobody on the team is qualified to own alone.</p>
+        </div>
+        <div class="card">
+          <h3>Growing teams</h3>
+          <p>Your engineers need direction and a career ladder, not just
+          another req to fill.</p>
+        </div>
+        <div class="card">
+          <h3>Investors &amp; boards</h3>
+          <p>You need technical due diligence and ongoing oversight, without
+          adding a permanent engineering seat to the board.</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        roles.forEach(role => {
-            const roleElement = document.createElement('div');
-            roleElement.className = 'role';
-            roleElement.textContent = role;
-            roleElement.setAttribute('hx-get', `/api/role-details?role=${encodeURIComponent(role)}`);
-            roleElement.setAttribute('hx-target', '#role-details');
-            roleElement.setAttribute('hx-trigger', 'click');
-            rolesContainer.appendChild(roleElement);
-        });
-    </script>
+  <!-- SERVICES -->
+  <section class="section services" id="services">
+    <div class="section-inner">
+      <p class="eyebrow mono">// services</p>
+      <h2 class="section-title">What's actually on the roadmap</h2>
+
+      <div class="card-grid services-grid">
+        <div class="card service-card">
+          <span class="service-tag mono">diligence</span>
+          <h3>Technical due diligence</h3>
+          <p>Pre-raise or pre-acquisition assessments that tell you what
+          you're actually buying, before the wire transfer clears.</p>
+        </div>
+        <div class="card service-card">
+          <span class="service-tag mono">architecture</span>
+          <h3>Architecture &amp; scaling</h3>
+          <p>Systems designed to survive 10x growth, not just carry today's
+          traffic.</p>
+        </div>
+        <div class="card service-card">
+          <span class="service-tag mono">people</span>
+          <h3>Team &amp; hiring</h3>
+          <p>Interview loops, org design, and hiring your first engineer or
+          your fifteenth.</p>
+        </div>
+        <div class="card service-card">
+          <span class="service-tag mono">roadmap</span>
+          <h3>Roadmap &amp; prioritization</h3>
+          <p>Turn a wishlist into a sequence your team can actually build,
+          in an order that makes sense.</p>
+        </div>
+        <div class="card service-card">
+          <span class="service-tag mono">stack</span>
+          <h3>Vendor &amp; tool strategy</h3>
+          <p>Stop paying for six SaaS tools doing the job of two.</p>
+        </div>
+        <div class="card service-card">
+          <span class="service-tag mono">reporting</span>
+          <h3>Board &amp; investor updates</h3>
+          <p>Technical progress explained in language your board actually
+          trusts.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- APPROACH / ENGAGEMENT LOG -->
+  <section class="section approach" id="approach">
+    <div class="section-inner">
+      <p class="eyebrow mono">// how engagements work</p>
+      <h2 class="section-title">The engagement log</h2>
+      <p class="section-sub">Every engagement follows the same release cycle.
+      No surprise scope creep, no vague "strategy phase" that never ships.</p>
+
+      <ol class="log">
+        <li class="log-entry">
+          <span class="log-tag mono">v0.1</span>
+          <div class="log-body">
+            <h3>Discovery</h3>
+            <p>Two weeks. A full audit of your stack, team, and roadmap.
+            No assumptions carried over from the last engineer who left.</p>
+          </div>
+        </li>
+        <li class="log-entry">
+          <span class="log-tag mono">v0.4</span>
+          <div class="log-body">
+            <h3>Assessment</h3>
+            <p>A prioritized, unvarnished list of what's broken, what's
+            risky, and what can genuinely wait.</p>
+          </div>
+        </li>
+        <li class="log-entry">
+          <span class="log-tag mono">v1.0</span>
+          <div class="log-body">
+            <h3>Roadmap</h3>
+            <p>A plan your team can execute without you sitting in every
+            single meeting.</p>
+          </div>
+        </li>
+        <li class="log-entry">
+          <span class="log-tag mono">v1.x</span>
+          <div class="log-body">
+            <h3>Execution</h3>
+            <p>Ongoing fractional leadership on a weekly or monthly
+            cadence, tuned to what the team needs right now.</p>
+          </div>
+        </li>
+        <li class="log-entry">
+          <span class="log-tag mono">v2.0</span>
+          <div class="log-body">
+            <h3>Handoff</h3>
+            <p>A full-time hire, an internal promotion, or a continued
+            partnership. Your roadmap, your call.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section about" id="about">
+    <div class="section-inner about-inner">
+      <div class="about-text">
+        <p class="eyebrow mono">// about</p>
+        <h2 class="section-title">Michael Morales</h2>
+        <p>
+          Michael founded Aedin Insight to give growing companies access to
+          senior technical leadership without the full-time price tag or the
+          twelve-month search. He's based in Albuquerque and works with
+          teams wherever they are.
+        </p>
+        <p class="about-note mono">
+          [Edit this bio with your background, past roles, and industries
+          before publishing.]
+        </p>
+        <a class="btn btn-primary" href="https://calendly.com/aedificationis/meeting-with-michael-morales" target="_blank" rel="noopener">Book a call with Michael</a>
+      </div>
+      <div class="about-card" aria-hidden="true">
+        <div class="about-card-header mono">status.log</div>
+        <div class="about-card-body mono">
+          <p><span class="ok">✓</span> currently accepting Q3 engagements</p>
+          <p><span class="ok">✓</span> remote-first, US-based</p>
+          <p><span class="ok">✓</span> no equity required to talk</p>
+          <p><span class="pending">…</span> your roadmap, pending review</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="section final-cta">
+    <div class="section-inner final-cta-inner">
+      <h2 class="cta-headline">Let's talk about what's actually broken.</h2>
+      <p class="cta-sub">Thirty minutes. No deck required.</p>
+      <a class="btn btn-primary btn-lg" href="https://calendly.com/aedificationis/meeting-with-michael-morales" target="_blank" rel="noopener">
+        Book a call
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <span class="logo-mark">&gt;_</span>
+      <span class="logo-text">Aedin Insight, LLC</span>
+    </div>
+    <p class="footer-meta mono">Albuquerque, NM · Fractional CTO Services</p>
+    <p class="footer-copy">© <span id="year"></span> Aedin Insight, LLC. All rights reserved.</p>
+  </div>
+</footer>
+
+<script>
+// Footer year
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Scroll reveal for sections
+const revealTargets = document.querySelectorAll('.card, .log-entry, .about-inner, .cta-headline');
+
+revealTargets.forEach((el) => el.classList.add('reveal'));
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+revealTargets.forEach((el) => observer.observe(el));
+
+</script>
 </body>
 </html>
