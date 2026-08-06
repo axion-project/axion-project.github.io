@@ -1,9 +1,6 @@
 # Dr. Michael Morales
 ### Principal Systems Architect & AI Consultant | Founder, Aedin Insight
 
-[![Aedin Insight](https://img.shields.io/badge/Aedin_Insight-0B0F14?style=for-the-badge&logo=firefox&logoColor=2FE6C6)](https://aedininsight.com)
-[![MM&A](https://img.shields.io/badge/MM%26A-0B0F14?style=for-the-badge&logo=terminal&logoColor=FFB454)](http://aedininsight.info)
-
 ---
 
 ### ⚡ Operational Focus
@@ -16,50 +13,32 @@
 ### 💻 Tech Stack & Infrastructure
 
 #### Core Languages & Runtimes
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
-![Rust](https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white)
-![PHP](https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white)
-![Bash](https://img.shields.io/badge/GNU_Bash-4EAA25?style=for-the-badge&logo=gnu-bash&logoColor=white)
-![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+`Python` | `C++` | `Rust` | `PHP` | `GNU Bash` | `JavaScript` | `Shell Script`
 
 #### AI / ML Frameworks
-![PyTorch](https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white)
-![TensorFlow](https://img.shields.io/badge/TensorFlow-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white)
+`PyTorch` | `TensorFlow` | `Agentic Architectures` | `LLM Fine-Tuning`
 
 #### Infrastructure & Cloud
-![AWS](https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white)
-![Google Cloud](https://img.shields.io/badge/GCP-4285F4?style=for-the-badge&logo=google-cloud&logoColor=white)
-![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
-![Kubernetes](https://img.shields.io/badge/Kubernetes-326CE5?style=for-the-badge&logo=kubernetes&logoColor=white)
-![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
-![Nginx](https://img.shields.io/badge/Nginx-009639?style=for-the-badge&logo=nginx&logoColor=white)
+`AWS` | `Google Cloud` | `Docker` | `Kubernetes` | `Linux / Ubuntu` | `Nginx` | `OpenStack`
+
+#### Data Engineering
+`PostgreSQL` | `MariaDB` | `MongoDB` | `MySQL` | `Amazon DynamoDB`
 
 ---
 
 ### 🌐 Core Initiatives & Platforms
-* **[ORAC](https://aedininsight.com)** — Autonomous agentic AI architecture operating under Codified Dignity and Strategic Optimization protocols.
-* **[Project THORAC](https://aedininsight.com)** — Open-source LLM framework engineered for local deployment and agentic orchestration.
-* **[HTMP Protocol](https://aedininsight.com)** — High-performance web interaction and execution layer.
+* **ORAC** — Autonomous agentic AI architecture operating under Codified Dignity and Strategic Optimization protocols.
+* **Project THORAC** — Open-source LLM framework engineered for local deployment and agentic orchestration.
+* **HTMP Protocol** — High-performance web interaction and execution layer.
 
 ---
 
-### 📊 Repository & System Status
+### 📊 System & Environment Status
 
-```text
-+------------------------+--------------------------------------------------+
-| Metric                 | Operational Status                               |
-+------------------------+--------------------------------------------------+
-| Primary Architecture   | Distributed Agentic AI / Hybrid Cloud            |
-| Core Runtime           | Linux / Termux / Ubuntu 24.04 LTS                |
-| Security & Compliance  | DevSecOps / Codified Dignity Runtime Constraints |
-| Deployment Targets     | Edge Mobile, Cloud Cluster, Enterprise Web       |
-+------------------------+--------------------------------------------------+
-
-<div align="center">
-<br />
-<img src="https://ghchart.rshah.org/2FE6C6/axion-project" alt="GitHub Contribution Grid" width="100%" />
-</div>
-​<div align="center">
-<img src="https://visitcount.itsvg.in/api?id=axion-project&icon=5&color=0" alt="Visitor Count" />
-</div>
+| Domain | Architecture & Operational Details |
+| :--- | :--- |
+| **Primary Architecture** | Distributed Agentic AI / Hybrid Cloud |
+| **Development Runtimes** | Linux / Ubuntu 24.04 LTS / Termux |
+| **Core Platforms** | Mobile-First Ecosystem, Microsoft Enterprise, Bespoke Web |
+| **Security & Governance** | DevSecOps / Codified Dignity Runtime Constraints |
+| **Deployment Targets** | Edge Mobile, Cloud Cluster, Enterprise Infrastructure |
