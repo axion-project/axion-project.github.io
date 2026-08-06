@@ -44,19 +44,22 @@
 
 ---
 
-### 📊 Engineering Metrics
+### 📊 Repository & System Status
 
-| Overall Activity | Primary Stack |
-| :---: | :---: |
-| <img src="https://github-readme-stats.vercel.app/api?username=axion-project&theme=tokyonight&show_icons=true&hide_border=true&count_private=true" width="100%" /> | <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=axion-project&theme=tokyonight&hide_border=true&layout=compact" width="100%" /> |
+```text
++------------------------+--------------------------------------------------+
+| Metric                 | Operational Status                               |
++------------------------+--------------------------------------------------+
+| Primary Architecture   | Distributed Agentic AI / Hybrid Cloud            |
+| Core Runtime           | Linux / Termux / Ubuntu 24.04 LTS                |
+| Security & Compliance  | DevSecOps / Codified Dignity Runtime Constraints |
+| Deployment Targets     | Edge Mobile, Cloud Cluster, Enterprise Web       |
++------------------------+--------------------------------------------------+
 
 <div align="center">
-  <br />
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=axion-project&theme=tokyonight&hide_border=true" width="100%" />
+<br />
+<img src="https://ghchart.rshah.org/2FE6C6/axion-project" alt="GitHub Contribution Grid" width="100%" />
 </div>
-
----
-
-<div align="center">
-  <img src="https://visitcount.itsvg.in/api?id=axion-project&icon=5&color=0" alt="Visitor Count" />
+​<div align="center">
+<img src="https://visitcount.itsvg.in/api?id=axion-project&icon=5&color=0" alt="Visitor Count" />
 </div>
