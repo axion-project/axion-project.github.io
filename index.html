@@ -479,6 +479,22 @@ img { max-width: 100%; display: block; }
   font-size: 0.96rem;
 }
 
+.card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  margin-top: 1rem;
+  color: var(--accent);
+  font-size: 0.88rem;
+  font-weight: 500;
+  transition: opacity 0.15s ease;
+}
+
+.card-link:hover {
+  text-decoration: underline;
+  opacity: 0.9;
+}
+
 .service-tag {
   display: inline-block;
   color: var(--accent-amber);
@@ -677,8 +693,18 @@ img { max-width: 100%; display: block; }
   padding: 0 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
+  gap: 0.8rem;
 }
+
+.footer-nav {
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  margin-top: 0.25rem;
+}
+
+.footer-nav a:hover { color: var(--accent); }
 
 .footer-brand {
   display: flex;
@@ -726,12 +752,10 @@ img { max-width: 100%; display: block; }
     </a>
     <nav class="nav-links">
       <a href="#services">Services</a>
+      <a href="architect.html">AaaS</a>
       <a href="#approach">Approach</a>
       <a href="#about">About</a>
       <a href="#faq">FAQ</a>
-      <!-- AaaS navigation addition -->
-      <a href="architect.html">Architect-as-a-Service</a>
-
     </nav>
     <a class="btn btn-primary nav-cta" href="https://calendly.com/aedificationis/meeting-with-michael-morales" target="_blank" rel="noopener">Book a call</a>
   </div>
@@ -830,6 +854,7 @@ img { max-width: 100%; display: block; }
           <h3>Architecture &amp; scaling</h3>
           <p>Systems designed to survive 10x growth, not just carry today's
           traffic.</p>
+          <a href="architect.html" class="card-link mono">Learn about AaaS &rarr;</a>
         </div>
         <div class="card service-card">
           <span class="service-tag mono">people</span>
@@ -989,10 +1014,7 @@ img { max-width: 100%; display: block; }
       </div>
     </div>
   </section>
-  
-<!-- Recommended placement in nav, before Book a call -->
-<a href="architect.html" class="nav-aaas">Architect-as-a-Service</a>
-  
+
   <!-- FINAL CTA -->
   <section class="section final-cta">
     <div class="section-inner final-cta-inner">
@@ -1000,11 +1022,10 @@ img { max-width: 100%; display: block; }
       <p class="cta-sub">Thirty minutes. No deck required.</p>
       <a class="btn btn-primary btn-lg" href="https://calendly.com/aedificationis/meeting-with-michael-morales" target="_blank" rel="noopener">
         Book a call
-        <!-- Optional hero CTA -->
-<a class="btn btn-ghost" href="architect.html">Explore Architect-as-a-Service <span class="arrow">→</span></a>
       </a>
     </div>
   </section>
+
 </main>
 
 <footer class="footer">
@@ -1013,6 +1034,10 @@ img { max-width: 100%; display: block; }
       <span class="logo-mark">&gt;_</span>
       <span class="logo-text">Aedin Insight, LLC</span>
     </div>
+    <nav class="footer-nav mono">
+      <a href="index.html">Home</a>
+      <a href="architect.html">Architect-as-a-Service (AaaS)</a>
+    </nav>
     <p class="footer-meta mono">Albuquerque, NM · Fractional CTO Services</p>
     <p class="footer-copy">© <span id="year"></span> Aedin Insight, LLC. All rights reserved.</p>
   </div>
@@ -1044,3 +1069,4 @@ revealTargets.forEach((el) => observer.observe(el));
 </script>
 </body>
 </html>
+
